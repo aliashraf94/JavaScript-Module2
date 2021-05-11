@@ -9,5 +9,16 @@ Try to think of as many properties as you can!
 let laptop = {
     brand: "Lenovo",
     screenSize: 13,
-    isTouchscreen: true,
+    isTouchscreen: true
   };
+
+let myLaptop = {
+  brand: "Apple",
+  operatingSystem: "Mac",
+  ramType: "DDR3",
+  hardDiscType: "SSD",
+  screenSize: 13,
+  isTouchscreen: false
+}
+
+console.log(myLaptop.operatingSystem);
