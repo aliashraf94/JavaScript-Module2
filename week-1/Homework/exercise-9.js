@@ -41,25 +41,66 @@ var product2 = {
   price: 9.99,
   stock: 2
 };
+var product3 = {
+  id: 3,
+  name: "Laptop Bag",
+  price: 18.98,
+  stock: 11
+};
+var product4 = {
+  id: 4,
+  name: "Brakfast Table",
+  price: 24.99,
+  stock: 4
+};
 
 products.push(product1);
 products.push(product2);
+products.push(product3);
+products.push(product4);
 
 var shoppingCart = {
   totalPrice: 0,
   selectedProducts: []
 };
 
-function addToShoppingCart(id){
+// 3. Create a function addToShoppingCart to add a product to the shopping cart list giving the product id,
+// the function will add the product to the selectedProduct list, and add the price to the totalPrice
 
+function addToShoppingCart(id){
+  products.forEach( (product) => {
+    if (product.id === id && product.stock > 0){
+      shoppingCart.selectedProducts.push(product)
+      shoppingCart.totalPrice += product.price
+      product.stock -= 1
+      console.log(`${product.name} has been successfully added to your shopping cart and there is ${product.stock} units left in stock.`);
+    } else if (product.id === id && product.stock < 0){
+      console.log(`There is not enough ${product.name} in stock`);
+    }
+  })
 }
 
-function removeFromShoppingCart(id){
+// 4. Create the function removeFrom ShoppingCart to remove a product that a client does not like anymore
 
+function removeFromShoppingCart(id){
+  let productToRemove = products.find(product=>product.id === id)
+  shoppingCart.selectedProducts = shoppingCart.selectedProducts.filter(product=>product.id !== id)
+  shoppingCart.totalPrice = shoppingCart.totalPrice - productToRemove.price
 }
 
 function shop(){
-
+  // for each product in the selected products:
+  // find the product in our available products array
+  // and remove 1 from the inventory
+  for (const selectedProduct of shoppingCart.selectedProducts) {
+    const product = products.find(product => product.id === selectedProduct.id)
+    product.stock--
+  }
+  // after, set the total price to 0 and the selected products to []
+  shoppingCart = {
+    selectedProducts: [],
+    totalPrice: 0
+  }
 }
 
 //results
