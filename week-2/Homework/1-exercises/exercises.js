@@ -15,6 +15,14 @@
  */
 function exerciseOne(arrayOfPeople) {
   let content = document.querySelector("#content");
+  arrayOfPeople.forEach((person)=>{
+    let h1 = document.createElement("h1")
+    let h2 = document.createElement("h2")
+    h1.innerText = person.name
+    h2.innerText = person.job
+    content.appendChild(h1)
+    content.appendChild(h2)
+  })
 }
 
 /**
@@ -25,7 +33,14 @@ function exerciseOne(arrayOfPeople) {
  *
  */
 function exerciseTwo(shopping) {
-  //Write your code in here
+  let content = document.querySelector("#content")
+  let ul = document.createElement("ul")
+  shopping.forEach((item)=>{
+    let li = document.createElement("li")
+    li.innerText = item
+    ul.appendChild(li)
+  })
+  content.appendChild(ul)
 }
 
 /**
@@ -59,6 +74,28 @@ function exerciseTwo(shopping) {
 **/
 function exerciseThree(books) {
   //Write your code in here
+  let content = document.querySelector('#content')
+  let ul = document.createElement('ul')
+  books.forEach(book => {
+    let li = document.createElement('li')
+    let p = document.createElement('p') 
+    p.innerText = `${book.title} ${book.author}`
+
+    let img = document.createElement('img')
+    img.src = book.imgUrl
+    img.style.width = "200px"
+    
+    if(book.alreadyRead) {
+      li.style.backgroundColor = 'green'
+    }
+    else {
+      li.style.backgroundColor = 'red'
+    }
+    li.appendChild(p)
+    li.appendChild(img)
+    ul.appendChild(li)
+  })
+  content.appendChild(ul)
 }
 
 //
@@ -87,17 +124,20 @@ const books = [
   {
     title: "The Design of Everyday Things",
     author: "Don Norman",
-    alreadyRead: false
+    alreadyRead: false,
+    imgUrl: "https://miro.medium.com/max/1200/1*Qo27inBKBKY4Q4Pgk5KkbQ.png"
   },
   {
     title: "The Most Human Human",
     author: "Brian Christian",
-    alreadyRead: true
+    alreadyRead: true,
+    imgUrl: "https://images-na.ssl-images-amazon.com/images/I/71HMyqG6MRL.jpg"
   },
   {
     title: "The Pragmatic Programmer",
     author: "Andrew Hunt",
-    alreadyRead: true
+    alreadyRead: true,
+    imgUrl: "https://m.media-amazon.com/images/I/41uPjEenkFL._SX260_.jpg"
   }
 ];
 
