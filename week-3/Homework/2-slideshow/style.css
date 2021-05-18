@@ -1,1 +1,19 @@
 /** Write your CSS in here **/
+#background{
+    background-color: rgb(120, 167, 215);
+}
+#heading{
+    position: relative;
+    left: 500px;
+}
+
+#images{
+    position: relative;
+    left: 475px;
+    margin-bottom: 10px;
+}
+
+#buttons {
+    position: relative;
+    left: 380px;
+}

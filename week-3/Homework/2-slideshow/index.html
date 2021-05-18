@@ -2,16 +2,33 @@
 <html>
   <head>
     <title>Slideshow</title>
-    <script src="slideshow.js"></script>
     <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+    crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body id="background">
     <!-- Write your HTML in here -->
+    <div >
+      <div id="heading">
+        <h1>Got Vaccinated </h1>
+      </div>
+      <div id="images">
+        <img src="./images/IMG_11.jpg" alt="" width="325px" />
+      </div>
+
+      <div id="buttons">
+        <button id = "autobackward" type="button" class="btn btn-outline-warning" > Auto Backward</button>
+        <button id = "backward" type="button" class="btn btn-outline-warning" > Backward</button>
+        <button id = "stop" type="button" class="btn btn-outline-danger" >Stop</button>
+        <button id = "forward" type="button" class="btn btn-outline-warning" > Forward</button>
+        <button id = "autoforward" type="button" class="btn btn-outline-warning" >Auto Forward</button>
+      </div>
+    </div>
+    <script src="slideshow.js"></script>
   </body>
-</html>
+  </html>
+  
